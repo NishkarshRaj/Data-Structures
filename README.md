@@ -21,7 +21,7 @@
 
 [2) Single Link Linked List using Arrays](https://github.com/NishkarshRaj/Data-Structures/blob/master/Linked%20List/LinkedList_Array.cpp)
 
-[Doubly Linked List using Classes and Objects](https://github.com/NishkarshRaj/Data-Structures/blob/master/Linked%20List/DoublyLinkedList.cpp)
+[3) Doubly Linked List using Classes and Objects](https://github.com/NishkarshRaj/Data-Structures/blob/master/Linked%20List/DoublyLinkedList.cpp)
 
 ## Stack
 [1) Stacks using Linked List](https://github.com/NishkarshRaj/Data-Structures/blob/master/Stack/Stack_LinkedList.cpp)
