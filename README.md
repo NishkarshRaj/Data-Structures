@@ -30,3 +30,7 @@
 [1) Queues Using Linked List](https://github.com/NishkarshRaj/Data-Structures/blob/master/Queue/Queue_LinkedList.cpp)
 
 [2) Queues Using Arrays](https://github.com/NishkarshRaj/Data-Structures/blob/master/Queue/Queue_Array.cpp)
+
+[3) Circular Queues using Linked List](https://github.com/NishkarshRaj/Data-Structures/blob/master/Queue/Circular_Queue_LinkedList.cpp)
+
+[4) Circular Queues using Arrays](https://github.com/NishkarshRaj/Data-Structures/blob/master/Queue/CircularQueueArray.cpp)
