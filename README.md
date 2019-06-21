@@ -38,10 +38,12 @@
 [4) Circular Queues using Arrays](https://github.com/NishkarshRaj/Data-Structures/blob/master/Queue/CircularQueueArray.cpp)
 
 ## Trees
-[1) Inorder Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Trees/InorderTraversal.cpp)
+[1) Inorder Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Binary%20Trees/InorderTraversal.cpp)
 
-[2) Post Order Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Trees/PostOrderTraversal.cpp)
+[2) Post Order Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Binary%20Trees/PostOrderTraversal.cpp)
 
-[3) Pre Order Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Trees/PreOrderTraversal.cpp)
+[3) Pre Order Traversal of Binary Tree](https://github.com/NishkarshRaj/Data-Structures/blob/master/Binary%20Trees/PreOrderTraversal.cpp)
 
-[4) Breadth First Traversal (Level Order)](https://github.com/NishkarshRaj/Data-Structures/blob/master/Trees/BFSTraversal.cpp)
+[4) Breadth First Traversal (Level Order)](https://github.com/NishkarshRaj/Data-Structures/blob/master/Binary%20Trees/BFSTraversal.cpp)
+
+[5) Binary Tree General Code](https://github.com/NishkarshRaj/Data-Structures/blob/master/Binary%20Trees/BinaryTrees.cpp)
