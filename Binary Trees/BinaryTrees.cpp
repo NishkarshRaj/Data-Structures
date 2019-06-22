@@ -83,6 +83,7 @@ void Postorder(Tree *node)
 	Postorder(node->right);
 	node->show();
 }
+/*
 Tree *search(Tree *node,int el)
 {
 	if(node==NULL)
@@ -97,10 +98,25 @@ Tree *search(Tree *node,int el)
 		return node;
 	}
 }
+*/
 int main()
 {
 	Tree *root=NULL,*node,*ptr;
-	int ch,flag=0,el,fleg,ch1;
+	int ch,flag=0,el,fleg,arr[100],i,ch1;
+	//arr 100 contains a level order representation of elements of tree
+	//left child on nth key is 2n+1
+	//right child of nth key is 2n+2
+	//0 value of array means node is NULL currently
+	//Initializing the array
+	for(i=0;i<100;i++)
+	{
+		arr[i]=0;
+	}
+	Tree *p[100]; //creating pointers for all the possible nodes!! overhead i know but solves the problem effectively
+	for(i=0;i<100;i++)
+	{
+		p[i]=NULL;
+	}
 	cout<<"Binary Tree General Code";
 	do
 	{
@@ -125,6 +141,9 @@ int main()
 					root->insert();
 					root->left=NULL;
 					root->right=NULL;
+					arr[0]=root->key;
+					//cout<<arr[0];
+					p[0]=root;
 				}
 				else
 				{
@@ -138,88 +157,81 @@ int main()
 				}
 				else
 				{
-					cout<<"Insertion in Binary Tree"<<endl;
-					cout<<"Enter the element after which you want to perform insertion: ";
+					cout<<"Insertion in the Tree"<<endl;
+					cout<<"Enter the element whose child you want to insert: ";
 					cin>>el;
-					node = search(root,el);
-					node->show();
-					if(node==NULL)
+					fleg=-1;
+					for(i=0;i<100;i++)
 					{
-						cout<<"Cannot find the element in the Tree"<<endl;
+						if(arr[i]==el)
+						{
+							fleg=i;
+							break;
+						}
 					}
-					else //if(node->key==el)
+					if(fleg==(-1))
 					{
-						cout<<"Ready for insertion"<<endl;
-						fleg=0;
-						if((node->left==NULL)&&(node->right==NULL))
+						cout<<"Element does not exist in the tree!\nCannot perform Insertion!"<<endl;
+					}
+					else
+					{
+						cout<<"Element Found!\nChecking for empty child nodes\n";
+						if((p[i]->left==NULL)&&(p[i]->right==NULL))
 						{
-							fleg=1;	//can insert to both left and right
-						}
-						else if((node->left==NULL)&&(node->right!=NULL))
-						{
-							fleg=2; //insert to left only
-						}
-						else if((node->left!=NULL)&&(node->right==NULL))
-						{
-							fleg=3; //insert to right only
-						}
-						else if((node->left!=NULL)&&(node->right!=NULL))
-						{
-							fleg=4; //cannot insert
-						}
-						if(fleg==0)
-						{
-							cout<<"Cannot insert due to unforeseen circumstances"<<endl;
-						}
-						else if(fleg==1)
-						{
-							cout<<"Can insert to both left and right position"<<endl;
-							cout<<"Enter which position you want to insert (1 for left/2 for right): ";
+							cout<<"Both the nodes are empty! Enter 1 for left and 2 for right: ";
 							cin>>ch1;
 							if(ch1==1)
 							{
-								cout<<"Insertion at left"<<endl;
-							ptr=new Tree;
-							ptr->insert();
-							ptr->left=NULL;
-							ptr->right=NULL;
-							node->left=ptr;
+								cout<<"Insertion at Left"<<endl;
+								node = new Tree;
+								node->insert();
+								node->left=NULL;
+								node->right=NULL;
+								p[i]->left=node;
+								p[(2*i)+1]=node;
+								arr[(2*i)+1]=node->key;
 							}
 							else if(ch1==2)
 							{
-								cout<<"Insertion at right"<<endl;
-							ptr=new Tree;
-							ptr->insert();
-							ptr->left=NULL;
-							ptr->right=NULL;
-							node->right=ptr;
+								cout<<"Insertion at Right"<<endl;
+								node = new Tree;
+								node->insert();
+								node->left=NULL;
+								node->right=NULL;
+								p[i]->right=node;
+								p[(2*i)+2]=node;
+								arr[(2*i)+2]=node->key;
 							}
 							else
 							{
-								cout<<"Wrong Choice entered!! Cannot insert"<<endl;
+								cout<<"Invalid Choice! Cannot insert\n";
 							}
 						}
-						else if(fleg==2)
+						else if((p[i]->left==NULL)&&(p[i]->right!=NULL))
 						{
 							cout<<"Insertion at Left"<<endl;
-							ptr=new Tree;
-							ptr->insert();
-							ptr->left=NULL;
-							ptr->right=NULL;
-							node->left=ptr;
+							node = new Tree;
+							node->insert();
+							node->left=NULL;
+							node->right=NULL;
+							p[i]->left=node;
+							p[(2*i)+1]=node;
+							arr[(2*i)+1]=node->key;
 						}
-						else if(fleg==3)
+						else if((p[i]->left!=NULL)&&(p[i]->right==NULL))
 						{
-							cout<<"Insertion at right"<<endl;
-							ptr=new Tree;
-							ptr->insert();
-							ptr->left=NULL;
-							ptr->right=NULL;
-							node->right=ptr;
+							cout<<"Insertion at Right"<<endl;
+							node = new Tree;
+							node->insert();
+							node->left=NULL;
+							node->right=NULL;
+							p[i]->right=node;
+							p[(2*i)+2]=node;
+							arr[(2*i)+2]=node->key;
 						}
-						else if(fleg==4)
+						else if((p[i]->left!=NULL)&&(p[i]->right!=NULL))
 						{
-							cout<<"Cannot insert as the current node has both childs present"<<endl;
+							cout<<"Both children exists and Insertion is not possible\n";
 						}
 					}
 				}
