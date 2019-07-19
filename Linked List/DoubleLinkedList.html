@@ -1,0 +1,155 @@
+<html>
+<head>
+<title> Data Structures and Algorithms </title>
+<style>
+h1#header {text-align:center;}
+h2 {text-align:center;}
+div {margin-left:10px;}
+pre.edit {color:white;background-color:black; margin-left:10px; margin-right:10px;}
+button#Reference {
+background-color: blue;
+color: white;
+border: 2px solid black;
+margin-left:530px;
+margin-right:500px;
+margin-bottom:40px;
+width:300px;
+display:inline-block;
+text-align:center;
+padding: 5px;
+outline: 2px solid white;
+}
+</style>
+</head>
+<body>
+<u><h1 id="header"> Doubly Linked List </h1></u>
+<h3 style="text-align:center;"><mark>Reading time: 20 minutes | Coding time: 15 minutes</h3></mark>
+<div id=menu>
+<ol>
+<li><a href=#theory> Theory</a></li>
+<li><a href=#complexity> Complexity</a></li>
+<li><a href=#implementation> Implementation</a></li>
+<li><a href=#application> Applications</a></li>
+<li><a href=#advantages> Advantages</a></li>
+<li><a href=#disadvantage> Disadvantages</a></li>
+<li><a href=#question> Question</a></li>
+<li><a href=#Reference> Reference</a></li>
+</div>
+<div id="theory">
+<u><h2>Theory</h2></u>
+<pre>
+A Doubly Linked List is a Linked List which has connection pointer to each of its previous element and is generally defined as "prev"
+
+Thus, a node in Doubly Linked Pointer consists of following:
+
+	1) next pointer => contains the address of next node of the DLL.
+	2) data elements => contains the information of the node of DLL.
+	3) prev pointer => contains the address of the previous node of the DLL.
+
+<b>Declaration:
+class classname
+{
+datatype data1,....; //data elements
+classname *next; //next pointer
+classname *prev; //previous pointer
+}
+</b>
+</pre>
+<img src="dll.png" alt="Need Internet for Image" style="margin-left:500px;margin-right:500px;border:2px solid black;"> <br>
+<img src="compare.png" style="margin-left:500px;margin-right:500px;border:2px solid black;margin-top:5px;">
+</div>
+<div id="complexity">
+<u><h2>Complexity</h2></u>
+<ol>
+<li>Insertion</li>
+<ul>
+<li>Worst case time complexity <b>O(n)</b></li>
+<li>Best case time complexity <b>O(1)</b></li>
+<li>Average case time complexity <b>O(1)</b></li>
+<li>Space complexity <b>O(1)</b></li>
+</ul>
+<li>Deletion</li>
+<ul>
+<li>Worst case time complexity <b>O(n)</b></li>
+<li>Best case time complexity <b>O(1)</b></li>
+<li>Average case time complexity <b>O(1)</b></li>
+<li>Space complexity <b>O(1)</b></li>
+</ul>
+<li>Display</li>
+<ul>
+<li>Worst case time complexity <b>O(n)</b></li>
+<li>Best case time complexity <b>O(n)</b></li>
+<li>Average case time complexity <b>O(n)</b></li>
+<li>Space complexity <b>O(1)</b></li>
+</ul>
+</ol>
+</div>
+<u><h2 id="implementation">Implementation</h2></u>
+<img src="Code1.png" alt="Need Internet to get Image"> <br>
+<img src="Code2.png"><br>
+<img src="Code3.png"><br>
+<img src="Code4.png"><br>
+<img src="Code5.png"><br>
+</div>
+<div id="application">
+<u><h2>Applications of Doubly Linked List</h2></u>
+<ol>
+<li>Redo-Undo options</li>
+<li>Navigating next/previous pages on Web</li>
+<li>Sorting history by most recent.</li>
+</ol>
+</div>
+<div id="advantages">
+<u><h2>Advantages of Doubly Linked List</h2></u>
+<ol>
+<li>A Doubly linked list can be traversed from both its head and its tail.</li>
+<li>Deletion Operations becomes efficient and uses less memory.</li>
+<li>For a sorted Doubly Linked list, it is more efficient to traverse from nearest end.</li>
+</ol>
+</div>
+<div id="disadvantage">
+<u><h2>Disadvantages of Doubly Linked List</h2></u>
+<ol>
+<li>It uses one extra pointer for all the nodes, thus increasing the space complexity and security concerns.</li>
+<li>Handling large number of pointers while performing deletion is very tedious.</li>
+</ol>
+</div>
+<div id="question">
+<u><h2>Question</h2></u>
+<h4>What is the complexity of insertion of a node in Doubly Linked List?</h4>
+<button onclick="correct()" margin:auto; display:block;> 1) O(n)   </button> <br>
+<button onclick="incorrect()" margin:auto; display:block;> 2) O(1)   </button> <br>
+<button onclick="incorrect()" margin:auto; display:block;> 3) O(n<sup>2</sup>)</button> <br>
+<button onclick="incorrect()" margin:auto; display:block;> 4) O(2<sup>n</sup>)</button> <br>
+<div id="incorrect" style="display:none;">
+<pre class="edit">Incorrect Answer.
+Please Try another option. </pre>
+</div>
+<div id="correct" style="display:none;">
+<pre class="edit">Correct Answer!
+Explanation: For Insertion in Linked List, we have to traverse the list first.
+Complexity of Traversal = <b>O(n)</b>
+Complexity of Insertion of one node = <b>O(1)</b>
+Total Complexity = <b>O(n) + O(1) = <mark>O(n)</mark></b> </pre>
+</div>
+</div>
+<br>
+<a target="_blank" href="https://github.com/NishkarshRaj/Data-Structures/blob/master/Linked%20List/DoublyLinkedList.cpp">
+<button id="Reference">
+Check this code at GitHub
+</button>
+</a>
+<script>
+function correct()
+{
+document.getElementById("correct").style.display = "block";
+document.getElementById("incorrect").style.display = "none";
+}
+function incorrect()
+{
+document.getElementById("incorrect").style.display = "block";
+document.getElementById("correct").style.display = "none";
+}
+</script>
+</body>
+</html>
